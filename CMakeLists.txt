@@ -8,7 +8,7 @@ add_executable(C__Test main.cpp PerformanceRecorder.cpp PerformanceRecorder.hpp 
 if (PROFILE)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DPERFORMANCE_PROFILE")
     message(STATUS "Performance profile is enabled")
-    if (CONSTANT_TSC_SUPPORT)
+    if (CONST_TSC_SUPPORT)
         set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCONST_TSC_SUPPORT")
         message(STATUS "Constant tsc support is enabled")
     elseif(WIN32)
