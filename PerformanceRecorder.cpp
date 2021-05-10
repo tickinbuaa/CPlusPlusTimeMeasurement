@@ -35,8 +35,8 @@ void PerformanceRecorder::print(std::ostream &output_stream) {
                       << performance_record.file << ":"
                       << performance_record.line_number << "]"
                       << performance_record.name << ": wall clock time["
-                      << performance_record.wall_clock_counter / PerformanceRecordTimer::get_counter_per_ms()
-                      << "ms], invocation count[" << performance_record.count << "].\n";
+                      << performance_record.wall_clock_counter * 1.0 / PerformanceRecordTimer::get_counter_per_ms()
+                      << "ms], invocation count[" << performance_record.count << "].\n" << performance_record.wall_clock_counter;
     }
     output_stream.flush();
 }

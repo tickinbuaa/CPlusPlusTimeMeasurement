@@ -12,7 +12,7 @@ using namespace std;
 #include "Timer.hpp"
 
 int main() {
-    constexpr int LOOP_COUNT = 10000000;
+    constexpr int LOOP_COUNT = 100000000;
     Timer timer1;
     for (int j = 0; j < LOOP_COUNT;j++){
         performance_test("mytefdsastfdfdsafdsafd",);
