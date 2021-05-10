@@ -3,7 +3,7 @@
 //
 #include <vector>
 #include <ostream>
-#include <iostream>
+#include <algorithm>
 #include "PerformanceRecorder.hpp"
 #include "PerformanceRecordTimer.hpp"
 
