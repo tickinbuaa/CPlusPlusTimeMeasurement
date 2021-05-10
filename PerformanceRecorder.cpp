@@ -1,6 +1,8 @@
 //
 // Created by 胡磊 on 2021/5/7.
 //
+
+#ifdef PERFORMANCE_PROFILE
 #include <vector>
 #include <ostream>
 #include <algorithm>
@@ -38,3 +40,5 @@ void PerformanceRecorder::print(std::ostream &output_stream) {
     }
     output_stream.flush();
 }
+
+#endif // PERFORMANCE_PROFILE

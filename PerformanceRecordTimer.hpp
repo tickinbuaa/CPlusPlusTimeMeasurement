@@ -5,10 +5,9 @@
 #ifndef C__TEST_PERFORMANCERECORDTIMER_HPP
 #define C__TEST_PERFORMANCERECORDTIMER_HPP
 
-#include <cstdint>
+#ifdef PERFORMANCE_PROFILE
 
-#define CONST_TSC_SUPPORT
-//#define _WIN32
+#include <cstdint>
 
 #ifdef CONST_TSC_SUPPORT
 #include <chrono>
@@ -18,32 +17,6 @@
 #else
 #include <chrono>
 #endif
-
-#ifdef _WIN32
-typedef unsigned long DWORD;
-
-typedef struct _FILETIME {
-    DWORD dwLowDateTime;
-    DWORD dwHighDateTime;
-} FILETIME;
-
-int GetCurrentProcess() {
-    return 1;
-}
-
-void GetProcessTimes(int i, FILETIME *first,  FILETIME *second,  FILETIME *third,  FILETIME *fourth){
-
-}
-
-union ULARGE_INTEGER{
-    struct {
-        uint32_t LowPart;
-        uint32_t HighPart;
-    };
-    uint64_t QuadPart;
-};
-#endif
-
 
 class PerformanceRecordTimer {
 
@@ -154,5 +127,7 @@ private:
     clock_unit wall_clock_start;
     static uint64_t counter_per_ms;
 };
+
+#endif // PERFORMANCE_PROFILE
 
 #endif //C__TEST_PERFORMANCERECORDTIMER_HPP

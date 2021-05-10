@@ -5,8 +5,6 @@
 #ifndef CHIAPOS_PROFILE_HPP
 #define CHIAPOS_PROFILE_HPP
 
-#define PERFORMANCE_PROFILE
-
 #ifdef PERFORMANCE_PROFILE
 #include <chrono>
 #include <iostream>

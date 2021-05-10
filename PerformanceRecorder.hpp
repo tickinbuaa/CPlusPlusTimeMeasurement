@@ -5,6 +5,8 @@
 #ifndef C__TEST_PERFORMANCERECORDER_HPP
 #define C__TEST_PERFORMANCERECORDER_HPP
 
+#ifdef PERFORMANCE_PROFILE
+
 #include <cstdint>
 #include <string>
 #include <map>
@@ -48,5 +50,7 @@ private:
 };
 
 extern PerformanceRecorder g_performance_recorder;
+
+#endif // PERFORMANCE_PROFILE
 
 #endif //C__TEST_PERFORMANCERECORDER_HPP
